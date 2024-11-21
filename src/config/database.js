@@ -1,5 +1,9 @@
-const mongoose = require('mongoose');
-const url = 'mongodb+srv://usertkmont:BR54321@cluster0.ztnmn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
-mongoose.connect(url, { useNewUrlParser: true }); // https://mongoosejs.com/docs/5.x/docs/deprecations.html
+const Mongoose = require('mongoose');
 
-module.exports = mongoose;
+const url = 'mongodb+srv://usertkmont:BR54321@cluster0.ztnmn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
+Mongoose.connect(url)
+    .then(() => console.log("Conexão com MongoDB bem-sucedida"))
+    .catch((error) => console.error("Erro ao conectar ao MongoDB:", error));
+    
+module.exports = Mongoose;
